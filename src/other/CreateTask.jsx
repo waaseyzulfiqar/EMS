@@ -2,11 +2,8 @@ import React from "react";
 
 const CreateTask = () => {
   return (
-    <div className="w-full bg-[#1c1c1c] flex mt-5 justify-center items-center flex-col">
-      <h1 className="text-3xl font-semibold tracking-tight mb-5">
-        Create Task
-      </h1>
-      <div className="flex w-full justify-around px-10 py-7 bg-slate-700">
+    <div className="w-full bg-[#1c1c1c] flex mt-4 justify-center items-center flex-col">
+      <div className="flex w-full justify-around px-10 py-7 bg-slate-700 rounded">
         <div className="flex flex-col w-1/3">
           <form>
             <div className="flex flex-col">
