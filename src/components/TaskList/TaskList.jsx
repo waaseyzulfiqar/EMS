@@ -5,20 +5,50 @@ import CompleteTask from "./CompleteTask";
 import FailedTask from "./FailedTask";
 
 const TaskList = (props) => {
-  const { firstName } = props.data;
+  if (!props || !props.data || !props.data.tasks) {
+    return (
+      <div id="tasklist" className="h-64 w-full mt-10 flex justify-center items-center">
+        <p>Error: Task data not available.</p>
+      </div>
+    );
+  }
+
+  if (!Array.isArray(props.data.tasks)) {
+    return (
+      <div id="tasklist" className="h-64 w-full mt-10 flex justify-center items-center">
+        <p>Error: Task data is not an array.</p>
+      </div>
+    );
+  }
 
   return (
     <div
       id="tasklist"
       className="h-64 w-full mt-10 flex gap-x-5 items-center justify-start overflow-x-auto"
     >
-      <AcceptTask />
+      {props.data.tasks.map((elem, index) => {
+        if (typeof elem !== "object") {
+          return null;
+        }
 
-      <NewTask />
+        if (elem.active) {
+          return <AcceptTask key={index} data={elem} />;
+        }
 
-      <CompleteTask />
+        if (elem.newTask) {
+          return <NewTask key={index} data={elem}/>;
+        }
 
-      <FailedTask />
+        if (elem.completed) {
+          return <CompleteTask key={index} data={elem}/>;
+        }
+
+        if (elem.failed) {
+          return <FailedTask key={index} data={elem}/>;
+        }
+
+        return null;
+      })}
     </div>
   );
 };
