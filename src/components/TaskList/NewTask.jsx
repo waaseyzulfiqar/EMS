@@ -1,6 +1,7 @@
 import React from "react";
 
 const NewTask = ({data}) => {
+console.log(data);
   return (
     <div
       id="tasklist"
