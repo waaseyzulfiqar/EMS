@@ -38,6 +38,8 @@ const CreateTask = () => {
 
       setUserData(userData)
 
+      localStorage.setItem('employees', JSON.stringify(userData))
+
       console.log(userData);
       // Reset form fields
       setTaskTitle("");
