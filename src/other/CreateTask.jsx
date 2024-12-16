@@ -12,6 +12,7 @@ const CreateTask = () => {
   const [userData, setUserData] = useContext(AuthContext);
 
   function submitHandler(e) {
+    
     e.preventDefault();
 
     setNewTask({
@@ -41,6 +42,7 @@ const CreateTask = () => {
       localStorage.setItem('employees', JSON.stringify(userData))
 
       console.log(userData);
+
       // Reset form fields
       setTaskTitle("");
       setTaskDate("");

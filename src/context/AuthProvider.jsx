@@ -4,6 +4,7 @@ import { getLocalStorage } from "../utils/localStorage";
 export const AuthContext = createContext();
 
 const AuthProvider = (props) => {
+  
   const { children } = props;
 
   const [userData, setUserData] = useState(null);
