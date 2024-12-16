@@ -41,8 +41,6 @@ function App() {
     }
   }
 
-  console.log("user -->", user);
-
   return (
     <div className="h-screen bg-slate-900 text-white">
       {!user ? (
